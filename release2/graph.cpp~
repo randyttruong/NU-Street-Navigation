@@ -1,0 +1,57 @@
+//
+// Randy Truong
+// Professor Joe Hummel
+// Northwestern University
+// CS 211: Winter 2023
+//
+
+#include "graph.h"
+
+using namespace std;
+
+
+// graph()
+//
+// This is the constructor function for the grpah, which takes
+// in zero arguments and initializes an empty graph, which
+// will just be an adjacency list that is composed of a map.
+//
+
+int graph::NumVertices() const {
+  return (int) vertexSet.size();
+};
+
+int graph::NumEdges() {
+  // Literally just going to get the size of the edgeSet
+  // instance variable
+  return (int) edgeSet.size();
+};
+
+bool graph::addVertex(string v) {
+  mainGraph[v] = 0;
+
+  return;
+};
+
+bool graph::addEdge(string from, string to, double weight) {
+
+  return;
+};
+
+bool graph::getWeight(string from, string to, double& weight) const {
+
+  return;
+};
+
+set<string> graph::neighbors(string v) const {
+
+  return;
+};
+
+vector<string> getVertices() const {
+
+};
+
+void graph::print(ostream& output) const{
+
+};

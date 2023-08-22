@@ -1,0 +1,66 @@
+#+title: Project08 Agenda 
+
+* DONE Part 01: Graph Class
+1. Requirements for the Graph Class
+   1) Space requirement of at most O(V + E), where V is the # of vertices 
+   2) Adding a vertex may take at most O(log(V)) time
+   3) Adding an edge (x, y, w) may take at most O(log(V) + E) time, where E is the number of edges starting from X.
+   4) Getting an edge's weight may take at most O(log(v) + E) time 
+   5) Must support all possible weights (negative, 0, or positive) 
+   6) Must support cyclic edges, i.e. an edge from a vertex to itself 
+   7) Does not need to support multi-edges -- i.e. assume at mostone edge from vertex x to vertex y. (To be clear, vertex x can have an edge to itself, an edge to vertex y, an edge to vertex z, and so on. There just can't be multiple edges from x ot y, at most only one from x to y.)
+
+2. Idea: 
+   1) Use an _adjacency list_ 
+      1) Initializing a map where each bucket contains a vector of weights, where each weight (an integer) represents the distance (the magnitude of an edge) from one node to another node.
+
+	 1. Private Fields:
+
+	 2. Public Methods: 
+	    1. graph();
+	       #+begin_src
+	       
+	       #+end_src
+	    2. NumVertices(); 
+	    3. NumEdges(); 
+	    4. addVertex(string v); 
+	    5. addEdge(string from, string to, double weight); 
+	    6. bool getWeight(string from, string to, double& weight); 
+	    7. set<string> neighbors(string v); 
+	    8. vector<string> getVertices();
+	    9. void print(ostream& output) const; 
+
+* Part 02: Unit Testing
+#+begin_src markdown
+Part 02 of the project is to write at least 5, non-trivial unit tests that test the public
+methods of the Graph class. Be sure to test all aspects of each method. For example,
+be sure to test:
+
+1. addVertex(v) returns false if v is already in the graph
+2. addEdge(x, y, w) returns false if x or y do not exist
+3. addEdge(x, y, w) updates the xisting weight if the edge already exists
+4. getWeight(x, y, w ) returns false if a vertex does not exist, or the edge does not exist
+
+You do not need to test the print() method, the staff will manually review to make sure it
+outputs the required information.
+
+#+end_src
+
+#+begin_src
+"Non-Trivial" Unit Tests:
+1. Each test MUST create a raph with at least 8 vertices and 12 edges
+2. Create the grpah using explicit calls to addVertex() and addEdge(), do NOT build by
+inputting a file because GradeScope will NOT be configured to support htis. Create different
+graphs, do not create the same graph over and over again. Each test case does not need
+to call every function, instead think of each test case as testing one aspect of the graph:
+
+Example Unit Tests:
+1. Simple Unit Test Building a Basic Graph
+2. Test Functions returning False
+3. Test getVertices() on an empty graph, neighbors(v) on an empty graph, where v does not exist or where v has no neighbors
+4. Test all the functions in various combinations
+5. Stress test a BIG graph (millions of vertices and edges) to make sure you are meeting time
+requirements -- you should be able to build a big graph in a few seconds
+
+#+end_src
+* Part 03: (Extra Credit) A Templated Graph Class
