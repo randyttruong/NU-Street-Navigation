@@ -1,12 +1,5 @@
 /* graph.cpp  */
 
-//
-// Randy Truong
-// Professor Joe Hummel
-// Northwestern University
-// CS 211: Winter 2023
-//
-
 #include "graph.h"
 
 using namespace std;
